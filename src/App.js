@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserInfo from "./components/UserInfo";
-import { thunk_action_creator } from "./actions/fetchActions";
+import { fetchSaga } from "./actions/fetchActions";
 
 class App extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const username = this.getUsernanme.value;
     console.log(username);
-    this.props.dispatch(thunk_action_creator(username));
+    this.props.dispatch(fetchSaga(username));
     this.getUsernanme.value = "";
     this.getUsernanme.focus();
   };

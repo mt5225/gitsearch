@@ -1,10 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import asyncReducer from "./reducers";
-import thunk from "redux-thunk";
+import saga from "redux-saga";
 
-//using redux-thunk middleware
-const store = createStore(asyncReducer, applyMiddleware(thunk));
-
-//using redux-saga middleware
-
+const store = createStore(asyncReducer, applyMiddleware(saga));
 export default store;
