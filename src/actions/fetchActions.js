@@ -19,6 +19,7 @@ export const receive_error = () => {
   };
 };
 
+/*
 export const thunk_action_creator = username => {
   const user = username.replace(/\s/g, "");
   const url = `https://api.github.com/users/${user}`;
@@ -37,3 +38,4 @@ export const thunk_action_creator = username => {
       .catch(err => dispatch(receive_error()));
   };
 };
+*/
