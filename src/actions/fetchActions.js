@@ -1,6 +1,5 @@
 import store from "../store";
-import { takeLatest } from "redux-saga";
-import { call, put } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 
 function* fetchUser(username) {
   const user = username.replace(/\s/g, "");
@@ -13,8 +12,8 @@ function* fetchUser(username) {
   }
 }
 
-function* fetchSaga() {
-  yield* takeLatest("FETCH_USER", fetchUser);
+function* fetchSaga(username) {
+  yield* takeLatest("FETCH_USER", fetchUser(username));
 }
 
 export default fetchSaga;

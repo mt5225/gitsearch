@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserInfo from "./components/UserInfo";
-import { fetchSaga } from "./actions/fetchActions";
+import { getUser } from "./actions";
 
 class App extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const username = this.getUsernanme.value;
     console.log(username);
-    this.props.dispatch(fetchSaga(username));
+    this.props.getUser(username); //dispatch the get user event to saga
     this.getUsernanme.value = "";
     this.getUsernanme.focus();
   };
@@ -41,4 +41,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+  getUser: getUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

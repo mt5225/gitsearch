@@ -7,23 +7,16 @@ const initialState = {
 const asyncReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_USER":
-      return Object.assign({}, state, {
-        ifFetching: true,
-        userData: {},
-        ifError: false
-      });
+      return { ...state, ifFetching: true, userData: {}, ifError: false };
     case "FETCHED_USER":
-      return Object.assign({}, state, {
+      return {
+        ...state,
         userData: action.data,
         ifFetching: false,
         ifError: false
-      });
+      };
     case "RECEIVE_ERROR":
-      return Object.assign({}, state, {
-        ifFetching: false,
-        userData: {},
-        ifError: true
-      });
+      return { ...state, ifFetching: false, userData: {}, ifError: true };
     default:
       return state;
   }
