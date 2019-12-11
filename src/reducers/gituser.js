@@ -4,7 +4,7 @@ const initialState = {
   ifError: false
 };
 
-const asyncReducer = (state = initialState, action) => {
+const gitUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_USER":
       return { ...state, ifFetching: true, userData: {}, ifError: false };
@@ -22,4 +22,4 @@ const asyncReducer = (state = initialState, action) => {
   }
 };
 
-export default asyncReducer;
+export default gitUserReducer;
