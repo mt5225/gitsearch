@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAction, removeAction } from "../../actions/CounterAction";
 
-export default Counter = () => {
+const Counter = () => {
   const count = useSelector(state => state.counter.count);
   const dispatch = useDispatch();
 
@@ -14,3 +14,5 @@ export default Counter = () => {
     </main>
   );
 };
+
+export default Counter;

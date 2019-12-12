@@ -16,7 +16,6 @@ class GitUser extends Component {
   render() {
     return (
       <div className="container">
-        <Counter />
         <form onSubmit={this.handleSubmit} className="form">
           <h2 className="title">Enter the github username</h2>
           <input
